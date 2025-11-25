@@ -4,4 +4,3 @@ def elParzyste(lista):
             print(el)
 lista_liczb=[i for i in range(10)]
 elParzyste(lista_liczb)
-
