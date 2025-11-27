@@ -7,6 +7,9 @@ class Walec(Kolo):
         super().__init__(r)          # dziedziczenie pól, właściwości i metod z klasy Kolo
         self.__h = Walec.__spr_h(h)
 
+    def __str__(self):
+        return 'Utworzenie obiektu klasy Walec o promieniu '+str(self.r)+' i wysokości '+str(self.__h)
+
     @property
     def h(self):
         return self.__h              # zwraca własność 'property' - pola prywatnego

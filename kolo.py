@@ -23,6 +23,9 @@ class Kolo:
     def __init__(self, r=0):  # konstruktor z możliwością ustawienie zmiennej prywatnej
         self.__r = Kolo.__spr_r(r)  # __r prywatne pole (zmienna), do którego obiekt nie ma dostępu
 
+    def __str__(self):
+        return 'Utworzenie obiektu klasy Koło o promieniu '+str(self.__r)
+
     @property  # zwraca własność 'property' - pola prywatnego
     def r(self):
         return self.__r
