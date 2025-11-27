@@ -16,7 +16,7 @@ def wypisz_dane_walca(walec, name):
 
 
 def wykonaj_program():
-    k1 = Kolo(float(Podaj.input("Podaj promień koła k1.r=")))
+    k1 = Kolo(Podaj.input("Podaj promień koła k1.r="))
     wypisz_dane_kola(k1, "k1")
     print("UWAGA! Zmienimy promień: nowy=poprzedni*2")
     k1.r *= 2
