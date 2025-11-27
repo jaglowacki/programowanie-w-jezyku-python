@@ -1,8 +1,15 @@
-def pomnoz(x:int, y:int)->int:
-    return x*y
-print(pomnoz(x=2,y=3))
+class MyClass:
+    x = 0
+    y = ""
 
-def wyswietl(tekst:str)->None:
-    print(tekst)
+    def __init__(self, anyNumber, anyString):
+        self.x = anyNumber
+        self.y = anyString
+    def __repr__ (self):
+        return 'MyClass(x=' + str(self.x) + ' ,y=' + self.y + ')'
+myObject = MyClass(12345, "Hello")
 
-wyswietl("Imię")
+print(myObject.__str__())
+print(myObject)
+print(str(myObject))
+print(myObject.__repr__())
