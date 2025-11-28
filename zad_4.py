@@ -5,4 +5,3 @@ def coDrugiElement(lista):
 
 lista_liczb=[i for i in range(10)]
 coDrugiElement(lista_liczb)
-
