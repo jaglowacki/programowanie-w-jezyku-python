@@ -10,3 +10,4 @@ if parzysta:
     print(f'Liczba x={a} jest parzysta')
 else:
     print(f'Liczba x={a} nie jest parzysta')
+

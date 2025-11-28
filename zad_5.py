@@ -3,3 +3,4 @@ def isPresent(lst:list, x:int)->bool:
 
 lista=[x for x in range(1,10)]
 print(isPresent(lista , 8))
+
