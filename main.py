@@ -39,4 +39,3 @@ def wykonaj_program():
 if __name__ == "__main__":
     wykonaj_program()
 
-

@@ -41,4 +41,3 @@ class Walec(Kolo):
     @staticmethod  # publiczna statyczna metoda obliczania objętości walca bez tworzenia obiektu
     def obj(r, h):
         return Kolo.p(r) * h
-
