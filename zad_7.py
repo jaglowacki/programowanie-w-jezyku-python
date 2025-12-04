@@ -38,19 +38,27 @@ class Brewery:
             return response.json()
         else:
             print(f'Coś poszło nie tak. Status code: {response.status_code}')
-            return []
+            return None
+
+    @staticmethod
+    def przetworz(lista_browarow:list):
+        lista_instancji = []
+        for browar in lista_browarow:
+            lista_instancji.append(Brewery(browar['id'], browar['name'], browar['brewery_type'], browar['address_1'],
+                                           browar['address_2'], browar['address_3'], browar['city'],
+                                           browar['state_province'], browar['postal_code'], browar['country'],
+                                           browar['longitude'], browar['latitude'], browar['phone'],
+                                           browar['website_url'], browar['state'], browar['street']))
+
+        for instancja in lista_instancji:
+            print(instancja)
+
 
 lista_browarow=Brewery.pobierz('https://api.openbrewerydb.org/v1/breweries','per_page=20')
+if lista_browarow is not None:
+    Brewery.przetworz(lista_browarow)
 
-lista_instancji=[]
-for browar in lista_browarow:
-    lista_instancji.append(Brewery(browar['id'],browar['name'], browar['brewery_type'], browar['address_1']\
-                                   , browar['address_2'], browar['address_3'], browar['city'], browar['state_province']\
-                                   , browar['postal_code'], browar['country'], browar['longitude'], browar['latitude']\
-                                   , browar['phone'], browar['website_url'], browar['state'], browar['street']))
 
-for instancja in lista_instancji:
-    print(instancja)
 
 
 
