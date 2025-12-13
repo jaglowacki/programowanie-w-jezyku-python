@@ -10,7 +10,8 @@ class Car:
     def hello(self):
         print(123)
 
-my_car = Car(3,'czerwony')
+
+my_car = Car(3, 'czerwony')
 
 print(my_car)
 print(dir(my_car))
