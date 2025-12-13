@@ -1,0 +1,90 @@
+WYKAZ NAJWAŻNIEJSZYCH POLECEŃ GITHUB
+
+git status					                -	wyświetla aktualny stan związany z repozytorium
+
+git show					                - 	pokazuje kto i jaką zmianę wykonał w aktualnym branchu
+git log						                -	pokazuje całą historię zmian w naszym branchu
+
+git branch					                - 	pokazuje wszystkie lokalne branche a gwiazdką oznacza wybrany
+
+git init					                -	tworzy puste repozytorium lokalne w katalogu w którym się znajdujemy
+
+git clone https://			            	- 	klonuje w bieżącym katalogu repozytorium utworzone zdalnie w GitHubie za pomocą
+							                    wskazania (skopiowania z GitHuba) linku
+
+git remote add origin https://			    - 	dodaje nasze zdalne repozytorium o adresie https:// do lokalnego folderu, jeżeli
+							                    lokalny folder i repozytorium założone zostały wcześniej np. przez git init
+
+git checkout nazwa				            -	przełącza do innej gałęzi (branch'u), nazwa jest bez " i '
+git chcekout -b nazwa				        -	tworzy nową gałąź (branch) i do niej automatycznie przełącza (lokalnie)
+git push -u origin nazwa		        	-	zakłada przygotowaną wcześniej lokalnie gałąź (branch) o danej nazwie na serwerze
+							                    GitHub (zdalnie)
+git push --set-upstream origin nazwa   		-	to samo co wyżej bo -u=--set-upstream
+
+git branch --set-upstream-to=origin/nazwa	-	należy wykonać jeśli nie widać lokalnie plików ze zdalnego branchu (jeśli git pull daje 										komunikat:There is no tracking information for the current branch)-najpierw zrób to co niżej!
+git pull origin nazwa			        	-	ściąga branch o nazwie nazwa z serwera remote na lokalny dysk
+
+
+git fetch --all				            	-	pobierz wszystkie uaktualnienia  bez merging'u
+							                    pobierz wszystkie gałęzie zdalne (bez tworzenia gałęzi lokalnych)
+							                       (potem wystarczy git checkout nazwa i nowy zdalny branch nazwa pojawi się lokalnie)
+
+git remote show origin			        	- 	pokazuje wszystkie zdalne branche
+
+git add nazwa				            	-	dodaje plik/folder o nazwie do staging area tworząc commit
+						                        (paczka zmian, taki kontener) nazwa jest bez " i '
+							                    Jeśli nazwa jest kropką . to dodane zostaną wszystkie pliki
+							                    wyświetlone instrukcją git status na czerwono
+
+git commit -m 'komentarz'			        -	dodaje zmiany ze staging area (paczka zmian, taki kontener)
+						                    	wprowadzone przez add (kolor zielony wyświetlony przez git status)
+						                    	do repozytorium (commit - znaczy paczka), apostrofy '' zawierają
+						                    	opisy (komentarze do wersji/zmiany). Taki commit/paczka znajduje
+							                    się jeszcze lokalnie na komputerze i aby ją wysłać trzeba wydać
+							                    polecenie git push
+
+git push				                	-	wysyła wszystkie zmiany z paczki commit do serwera chmury gitHub
+
+git pull				             	-	ściąga zmiany ze zdalnego serwera do lokalnego folderu
+
+git pull --rebase			        	-	jeśli po próbie git push otrzymamy komunikat:! [rejected]        main -> main (fetch first)
+						                	error: failed to push some refs to 'https://github.com/jaglowacki/repozytorium-testowe.git'
+						                	hint: Updates were rejected because the remote contains work that you do not
+						                	hint: have locally. This is usually caused by another repository pushing to
+						                	hint: the same ref. If you want to integrate the remote changes, use
+						                	hint: 'git pull' before pushing again.
+						                	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+						                	To oznacza, że inny użytkownik dodał do zdalnego repozytorium jakieś zmiany np. nowy plik
+						                	i przed naszym git push musimy najpierw te zmiany zaciągnąć aby zaktualizować nasze
+							                lokalnr repozytoriu. Robimy to właśnie tą komendą.
+
+git push origin --delete branch-name	-	usuwa zdalny branch
+
+git rebase --continue			    	-	gdy wystąpił konflikt którego git automatycznie nie umie rozwiązać, musimy najpierw
+							               rozwiązać konflikt ręczenie, potem zrobić git rabase --continue, dodać komentarz dla drugiego
+							               użytkownika, zaakceptować komentarz, a potem na końcu zrobić git push
+
+git merge nazwa				        	-	dołącza do gałęzi w której aktualnie przebywamy commity z gałęzi nazwa
+
+git restore --source nazwa -- plik.txt	-	przerzuca plik.txt z branchu nazwa do branchu w którym aktualnie się znajdujemy
+
+
+git branch -d branch_name		       	-	usuwa całkowicie marged branch
+git branch -D branch_name		    	-	usuwa unmerged branch
+
+git branch -r				        	-	wyświetla listę wszystkich zdalnych branchy
+
+git branch -M main				        -	zmienia nazwę gałęzi głównej na main, gdyż lokalnie tworzona jest nazwa master
+
+git pull --rebase origin main			-	wykonać, jeśli przy zakładaniu nowego repozytorium zdalnego po komendzie git push
+						                	otrzymaliśmy poniższy błąd:
+							                git problem: ! [rejected] main -> main (non-fast-forward) error: failed to push some refs to 										'https://github.com/jaglowacki/repozytorium-testowe.git' hint: Updates were rejected because the 									tip of your current branch is behind hint: its remote counterpart. If you want to integrate the 									remote changes, hint: use 'git pull' before pushing again. hint: See the 'Note about fast-										forwards' in 'git push --help' for details.
+
+git checkout --track origin/branch-name	-	automatycznie tworzy lokalny branch połączony ze zdalnego branchu o tej samej nazwie i przełącza do niego
+							                (upload zdalnego branchu do lokalnego repozytorium)
+
+
+git rebase -i HEAD~3			    	-	pozwala squashować więcej commitów w jeden commit
+pick aaaaaaa Commit 1
+squash bbbbbbb Commit 2
+squash ccccccc Commit 3
