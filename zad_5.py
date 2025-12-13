@@ -1,6 +1,6 @@
-def isPresent(lst:list, x:int)->bool:
+def isPresent(lst: list, x: int) -> bool:
     return x in lst
 
-lista=[x for x in range(1,10)]
-print(isPresent(lista , 8))
 
+lista = [x for x in range(1, 10)]
+print(isPresent(lista, 8))

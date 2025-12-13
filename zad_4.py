@@ -1,7 +1,8 @@
-def isGreater(a:int,b:int,c:int)->bool:
-    if a+b>=c:
+def isGreater(a: int, b: int, c: int) -> bool:
+    if a + b >= c:
         return True
     else:
         return False
 
-print(isGreater(3,2,2))
+
+print(isGreater(3, 2, 2))

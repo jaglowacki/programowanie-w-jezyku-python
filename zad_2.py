@@ -1,4 +1,5 @@
-def mnozenie(a:int, b:int)->int:
+def mnozenie(a: int, b: int) -> int:
     return a*b
 
-print(mnozenie(3,2))
+
+print(mnozenie(3, 2))
