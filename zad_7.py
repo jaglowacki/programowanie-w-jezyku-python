@@ -53,12 +53,13 @@ class Brewery:
         for instancja in lista_instancji:
             print(instancja)
 
+    @staticmethod
+    def main():
+        lista_browarow=Brewery.pobierz('https://api.openbrewerydb.org/v1/breweries','per_page=20')
+        if lista_browarow is not None:
+            Brewery.przetworz(lista_browarow)
 
-lista_browarow=Brewery.pobierz('https://api.openbrewerydb.org/v1/breweries','per_page=20')
-if lista_browarow is not None:
-    Brewery.przetworz(lista_browarow)
 
-
-
+Brewery.main()
 
 
