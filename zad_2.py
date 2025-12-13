@@ -8,7 +8,8 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        return f'Klasa Library z polami: city:{self.city}, street:{self.street}, zip_code:{self.zip_code}, open_hours:{self.open_hours}, phone:{self.phone}'
+        return f'Obiekt klasy Library z polami: city:{self.city}, street:{self.street}, zip_code:{self.zip_code}, '\
+               f'open_hours:{self.open_hours}, phone:{self.phone}'
 
 class Employee:
     def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
@@ -22,8 +23,8 @@ class Employee:
         self.phone = phone
 
     def __str__(self):
-        return f'Klasa Employee z polami: first_name:{self.first_name}, last_name:{self.last_name}, hire_date:{self.hire_date},\
-        birth_date:{self.birth_date}, city:{self.city}, street:{self.street}, zip_code:{self.zip_code}, phone:{self.phone}'
+        return f'Obiekt klasy Employee z polami: first_name:{self.first_name}, last_name:{self.last_name}, hire_date:{self.hire_date}, '\
+               f'birth_date:{self.birth_date}, city:{self.city}, street:{self.street}, zip_code:{self.zip_code}, phone:{self.phone}'
 
 class Book:
 
@@ -35,8 +36,8 @@ class Book:
         self.number_of_pages = number_of_pages
 
     def __str__(self):
-        return f'Klasa Book z polami: library:{self.library},\
-        publication_date:{self.publication_date}, author_name:{self.author_name}, author_surname:{self.author_surname}, number_of_pages:{self.number_of_pages}'
+        return f'Obiekt klasy Book z polami: [library:{self.library}], publication_date:{self.publication_date}, '\
+               f'author_name:{self.author_name}, author_surname:{self.author_surname}, number_of_pages:{self.number_of_pages}'
 
 class Order:
 
@@ -47,7 +48,7 @@ class Order:
         self.order_date = order_date
 
     def __str__(self):
-        return f'Klasa Order z polami: employee:{self.employee},student:{self.student},books:{self.books},order_date:{self.order_date}'
+        return f'Obiekt klasy Order z polami: [employee:{self.employee}],[student:{self.student}],[books:{self.books}],order_date:{self.order_date}'
 
 class Student:
     def __init__(self, first_name, last_name):
@@ -55,7 +56,7 @@ class Student:
         self.last_name = last_name
 
     def __str__(self):
-        return f'Klasa student z polami: first_name:{self.first_name}, last_name:{self.last_name}'
+        return f'Obiekt klasy Student z polami: first_name:{self.first_name}, last_name:{self.last_name}'
 
 
 Biblioteka_1=Library('Bytom','Konopnickiej', '41-909', '9-17', 322973456)
