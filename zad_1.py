@@ -1,4 +1,7 @@
-lista_imion = ['Janusz', 'Mateusz', 'Agnieszka', 'Marcin', 'Teodor']
+def lista_imion(imiona: list):
 
-for el in lista_imion:
-    print(el)
+    for el in imiona:
+        print(el)
+
+
+lista_imion(['Janusz', 'Mateusz', 'Agnieszka', 'Marcin', 'Teodor'])
